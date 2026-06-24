@@ -1,0 +1,20 @@
+meta {
+  name: Cadastrar Contato
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:8080/contatos
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "nome": "Filho do João",
+    "email": "filho.joao@email.com",
+    "telefone": "11977776666",
+    "clienteId": 1
+  }
+}
