@@ -3,6 +3,7 @@ package com.nubank.clientescontatos.infrastructure.controller.dto;
 import com.nubank.clientescontatos.domain.model.Cliente;
 import lombok.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,6 +18,7 @@ public class ClienteResponseDTO {
     private String email;
     private String telefone;
     private String funcionalEmpresa;
+    private LocalDateTime lastUpdate;
     private List<ContatoResponseDTO> contatos;
 
     public static ClienteResponseDTO fromDomain(Cliente cliente) {
@@ -29,6 +31,7 @@ public class ClienteResponseDTO {
                 .email(cliente.getEmail())
                 .telefone(cliente.getTelefone())
                 .funcionalEmpresa(cliente.getFuncionalEmpresa())
+                .lastUpdate(cliente.getLastUpdate())
                 .contatos(cliente.getContatos() != null ?
                         cliente.getContatos().stream()
                                 .map(ContatoResponseDTO::fromDomain)

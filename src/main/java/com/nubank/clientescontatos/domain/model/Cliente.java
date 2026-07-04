@@ -2,6 +2,7 @@ package com.nubank.clientescontatos.domain.model;
 
 import lombok.*;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +17,7 @@ public class Cliente {
     private String email;
     private String telefone;
     private String funcionalEmpresa;
+    private LocalDateTime lastUpdate;
     
     @Builder.Default
     private List<Contato> contatos = new ArrayList<>();

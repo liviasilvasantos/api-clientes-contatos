@@ -3,6 +3,9 @@ package com.nubank.clientescontatos.infrastructure.persistence.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import org.hibernate.annotations.UpdateTimestamp;
+import java.time.LocalDateTime;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +33,10 @@ public class ClienteEntity {
 
     @Column(name = "funcional_empresa")
     private String funcionalEmpresa;
+
+    @UpdateTimestamp
+    @Column(name = "last_update")
+    private LocalDateTime lastUpdate;
 
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
     @Builder.Default

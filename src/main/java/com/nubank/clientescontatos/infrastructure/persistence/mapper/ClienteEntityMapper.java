@@ -21,6 +21,7 @@ public class ClienteEntityMapper {
                 .email(entity.getEmail())
                 .telefone(entity.getTelefone())
                 .funcionalEmpresa(entity.getFuncionalEmpresa())
+                .lastUpdate(entity.getLastUpdate())
                 .build();
 
         if (entity.getContatos() != null) {
@@ -50,6 +51,7 @@ public class ClienteEntityMapper {
                 .email(domain.getEmail())
                 .telefone(domain.getTelefone())
                 .funcionalEmpresa(domain.getFuncionalEmpresa())
+                .lastUpdate(domain.getLastUpdate())
                 .build();
 
         if (domain.getContatos() != null) {
