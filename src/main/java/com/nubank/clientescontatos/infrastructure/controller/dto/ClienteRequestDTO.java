@@ -25,11 +25,14 @@ public class ClienteRequestDTO {
     @Size(min = 8, max = 20, message = "O telefone deve ter entre 8 e 20 caracteres")
     private String telefone;
 
+    private String funcionalEmpresa;
+
     public Cliente toDomain() {
         return Cliente.builder()
                 .nome(this.nome)
                 .email(this.email)
                 .telefone(this.telefone)
+                .funcionalEmpresa(this.funcionalEmpresa)
                 .build();
     }
 }

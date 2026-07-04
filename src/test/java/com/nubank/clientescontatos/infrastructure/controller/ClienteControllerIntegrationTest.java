@@ -51,6 +51,7 @@ class ClienteControllerIntegrationTest {
                 .nome("Maria Silva")
                 .email("maria@email.com")
                 .telefone("11988888888")
+                .funcionalEmpresa("FUNC1234")
                 .build();
 
         ContatoEntity contato = ContatoEntity.builder()
@@ -69,6 +70,7 @@ class ClienteControllerIntegrationTest {
                 .nome("José Santos")
                 .email("jose@email.com")
                 .telefone("11966666666")
+                .funcionalEmpresa("FUNC5678")
                 .build();
 
         mockMvc.perform(post("/clientes")
@@ -78,7 +80,8 @@ class ClienteControllerIntegrationTest {
                 .andExpect(jsonPath("$.id", notNullValue()))
                 .andExpect(jsonPath("$.nome", is("José Santos")))
                 .andExpect(jsonPath("$.email", is("jose@email.com")))
-                .andExpect(jsonPath("$.telefone", is("11966666666")));
+                .andExpect(jsonPath("$.telefone", is("11966666666")))
+                .andExpect(jsonPath("$.funcionalEmpresa", is("FUNC5678")));
     }
 
     @Test
@@ -120,6 +123,7 @@ class ClienteControllerIntegrationTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
                 .andExpect(jsonPath("$[0].nome", is("Maria Silva")))
+                .andExpect(jsonPath("$[0].funcionalEmpresa", is("FUNC1234")))
                 .andExpect(jsonPath("$[0].contatos", hasSize(1)))
                 .andExpect(jsonPath("$[0].contatos[0].nome", is("João Filho")));
     }

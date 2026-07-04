@@ -16,6 +16,7 @@ public class ClienteResponseDTO {
     private String nome;
     private String email;
     private String telefone;
+    private String funcionalEmpresa;
     private List<ContatoResponseDTO> contatos;
 
     public static ClienteResponseDTO fromDomain(Cliente cliente) {
@@ -27,6 +28,7 @@ public class ClienteResponseDTO {
                 .nome(cliente.getNome())
                 .email(cliente.getEmail())
                 .telefone(cliente.getTelefone())
+                .funcionalEmpresa(cliente.getFuncionalEmpresa())
                 .contatos(cliente.getContatos() != null ?
                         cliente.getContatos().stream()
                                 .map(ContatoResponseDTO::fromDomain)

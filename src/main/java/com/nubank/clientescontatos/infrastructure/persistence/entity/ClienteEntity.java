@@ -28,6 +28,9 @@ public class ClienteEntity {
     @Column(nullable = false)
     private String telefone;
 
+    @Column(name = "funcional_empresa")
+    private String funcionalEmpresa;
+
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
     @Builder.Default
     private List<ContatoEntity> contatos = new ArrayList<>();

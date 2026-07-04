@@ -20,6 +20,7 @@ public class ClienteEntityMapper {
                 .nome(entity.getNome())
                 .email(entity.getEmail())
                 .telefone(entity.getTelefone())
+                .funcionalEmpresa(entity.getFuncionalEmpresa())
                 .build();
 
         if (entity.getContatos() != null) {
@@ -48,6 +49,7 @@ public class ClienteEntityMapper {
                 .nome(domain.getNome())
                 .email(domain.getEmail())
                 .telefone(domain.getTelefone())
+                .funcionalEmpresa(domain.getFuncionalEmpresa())
                 .build();
 
         if (domain.getContatos() != null) {

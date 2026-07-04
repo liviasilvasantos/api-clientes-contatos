@@ -15,6 +15,7 @@ public class Cliente {
     private String nome;
     private String email;
     private String telefone;
+    private String funcionalEmpresa;
     
     @Builder.Default
     private List<Contato> contatos = new ArrayList<>();
